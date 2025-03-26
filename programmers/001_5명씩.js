@@ -16,15 +16,17 @@ names	result
 */
 
 function solution(names) {
-  let groups = [];
+  let groups = []; // 빈 배열 생성
 
   for (let i = 0; i < names.length; i++) {
+    // 반복문을 통해 names 안의 모든 요소 순환
     if (i % 5 === 0) {
+      //5명이 넘을때마다 새로운 그룹 생성  -> groups : [ [그룹1], [그룹2]]
       groups.push([]);
     }
 
-    groups[groups.length - 1].push(names[i]);
+    groups[groups.length - 1].push(names[i]); // 가장 마지막 그룹에 이름 추가
   }
 
-  return groups.map((group) => group[0]);
+  return groups.map((group) => group[0]); // 각 그룹의 첫번째 요소 출력
 }
